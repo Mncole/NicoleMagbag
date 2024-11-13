@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicole Magbag's Website</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            line-height: 1.6;
+            color: #000; /* Black text color for better readability */
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
+
+        /* Navbar Styling */
+        nav {
+            background-color: #34495e; /* Dark gray */
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: #3498db; /* Lighter blue for hover effect */
+        }
+
+        /* Remove underline on click */
+        nav ul li a:active {
+            text-decoration: none; /* Remove underline when clicked */
+        }
+
+        /* Hamburger Menu Styling */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Home Section Styling */
+        #home {
+            background-image: url('https://i.postimg.cc/T1yggjdq/home-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #home h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #2c3e50; /* Dark gray color for the heading */
+        }
+
+        /* Container for the Home Page Text */
+        .home-text {
+            background-color: rgba(255, 255, 255, 0.8); /* White background with slight transparency */
+            padding: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #home p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            line-height: 1.6;
+            color: #000; /* Black text color */
+        }
+
+        /* Profile Section */
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .profile-container .profile-img {
+            width: 300px;  /* Increased width */
+            height: 300px;  /* Increased height */
+            border-radius: 50%;
+            border: 6px solid #2c3e50; /* Dark gray border */
+            transition: all 0.3s ease;
+        }
+
+        .profile-container .profile-img:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+        /* About Me Section */
+        .about-me {
+            background-color: white;
+            padding: 40px;
+            max-width: 900px;
+            margin: 50px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-me h2 {
+            font-size: 2.5em;
+            color: #2c3e50; /* Dark blue for headings */
+            margin-bottom: 20px;
+        }
+
+        .about-me p {
+            font-size: 1.2em;
+            color: #000; /* Black text for better readability */
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+
+        /* Link Styling */
+        a {
+            color: #3498db; /* Blue links */
+            text-decoration: none; /* Remove underline */
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+
+            .hamburger div:nth-child(1) {
+                transform: ${({ show }) => (show ? "rotate(45deg) translate(5px, 5px)" : "none")};
+            }
+            .hamburger div:nth-child(2) {
+                opacity: ${({ show }) => (show ? "0" : "1")};
+            }
+            .hamburger div:nth-child(3) {
+                transform: ${({ show }) => (show ? "rotate(-45deg) translate(5px, -5px)" : "none")};
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile-section">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <!-- Entire "Welcome" text is clickable -->
+        <a href="#profile-section" style="text-decoration: none;">
+            <div class="home-text">
+                <h1>Welcome</h1>
+                <p>
+                    Hi! I'm Nicole, an aspiring web developer. I plan to improve this site and showcase my future projects here. Stay tuned for updates!
+                </p>
+            </div>
+        </a>
+    </section>
+
+    <!-- Profile Section with Image and About Me -->
+    <section id="profile-section" class="profile-container">
+        <!-- Profile Image -->
+        <img class="profile-img" src="https://i.postimg.cc/W1cbwmpp/new-profile.jpg" alt="Nicole Magbag">
+
+        <!-- About Me Section -->
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>
+                Hi, I'm Nicole, but you can call me Cole. I'm 24 years old and I'm already working. I started working when I was 15 as a tutor, then at 18, I joined as a call center agent. My work now is in the financial services industry. Although I was doing well there, I started feeling the need for a different career with better salary and opportunities, so I began exploring other fields. My original plan was to become a data analyst, but when I discovered coding, I became more interested in pursuing a career as a developer. I'm a bit scared because I really want to pursue this, but I don't have any background in IT. I didn't even graduate from any computer-related course, but I know I can do this.
+            </p>
+            <p>
+                Another interesting thing about me: I was also part of the choir back in high school, and I didn't really focus on sharing my singing talent, but now I want to appreciate what I have. So I might upload some of my singing covers here, not just coding projects. I'm planning to make this as my personal blog, focusing on self-love, self-discovery, healing, and growing closer to God. Let's also share our best practices in coding, feel free to reach me on my contact information and I'm happy to have a little chat's with you. I'm claiming that with God's grace, I'll be a web developer soon!
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Nicole Magbag. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle the hamburger menu
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.class
