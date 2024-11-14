@@ -25,19 +25,18 @@
         nav {
             background-color: #34495e; /* Dark gray */
             color: white;
-            padding: 15px;
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
             display: flex;
-            justify-content: space-between; /* Adjust to handle hamburger */
+            justify-content: center; /* Center in PC/laptop view */
             align-items: center;
         }
 
         nav ul {
             list-style-type: none;
             display: flex;
-            justify-content: center;
             gap: 20px;
         }
 
@@ -150,6 +149,24 @@
             margin-top: 20px;
         }
 
+        /* Contact Section */
+        #contact {
+            background-color: #f0f0f0;
+            padding: 40px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            font-size: 1.2em;
+            color: #000;
+        }
+
         footer {
             background-color: #34495e;
             color: white;
@@ -187,6 +204,10 @@
 
             .hamburger {
                 display: flex;
+            }
+
+            nav {
+                justify-content: space-between; /* Adjust for mobile */
             }
         }
     </style>
@@ -233,6 +254,12 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <p>Email: <strong>nicolemagbag340@gmail.com</strong></p>
+    </section>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Nicole Magbag. All rights reserved.</p>
@@ -246,5 +273,4 @@
         }
     </script>
 
-</body>
-</html>
+</
